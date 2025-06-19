@@ -17,15 +17,27 @@ describe('featureFlagsSelectors', () => {
     const result = featureFlagsSelectors(store.getState());
 
     expect(result).toEqual({
-      enableWebrtc: true,
+      enableWebrtc: false,
       isAgentEditable: false,
+      enablePlugins: true,
       showCreateSession: true,
+      showChangelog: true,
+      enableRAGEval: false,
       showDalle: true,
+      enableKnowledgeBase: true,
       showLLM: false,
+      showCloudPromotion: false,
       showOpenAIApiKey: true,
+      hideDocs: false,
+      hideGitHub: false,
       showOpenAIProxyUrl: true,
       enableCheckUpdates: true,
       showWelcomeSuggest: true,
+      enableClerkSignUp: true,
+      showProvider: true,
+      showMarket: true,
+      showPinList: false,
+      enableSTT: true,
     });
   });
 });
@@ -37,6 +49,7 @@ describe('serverConfigSelectors', () => {
         serverConfig: {
           enabledOAuthSSO: true,
           telemetry: {},
+          aiProvider: {},
         },
       });
 
@@ -51,6 +64,7 @@ describe('serverConfigSelectors', () => {
       const store = initServerConfigStore({
         serverConfig: {
           telemetry: { langfuse: true },
+          aiProvider: {},
         },
       });
 
@@ -63,6 +77,7 @@ describe('serverConfigSelectors', () => {
       const store = initServerConfigStore({
         serverConfig: {
           telemetry: {},
+          aiProvider: {},
         },
       });
 

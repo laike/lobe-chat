@@ -1,12 +1,12 @@
-import type { NeutralColors, PrimaryColors } from '@lobehub/ui';
-import type { ThemeMode } from 'antd-style';
+import type { HighlighterProps, MermaidProps, NeutralColors, PrimaryColors } from '@lobehub/ui';
 
-import { LocaleMode } from '@/types/locale';
+import { ResponseAnimationStyle } from '@/types/llm';
 
 export interface UserGeneralConfig {
   fontSize: number;
-  language: LocaleMode;
+  highlighterTheme?: HighlighterProps['theme'];
+  mermaidTheme?: MermaidProps['theme'];
   neutralColor?: NeutralColors;
   primaryColor?: PrimaryColors;
-  themeMode: ThemeMode;
+  transitionMode?: ResponseAnimationStyle;
 }
